@@ -12,6 +12,18 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+        .when('/signup', {
+          url: '/signup',
+          templateUrl: 'app/pages/signup/pages.signup.html',
+          controller: 'SignupController',
+          controllerAs: 'signup'
+        })
+        .when('/login', {
+          url: '/login',
+          templateUrl: 'app/pages/login/pages.login.html',
+          controller: 'LoginController',
+          controllerAs: 'login'
+        })
       .otherwise({
         redirectTo: '/'
       });
