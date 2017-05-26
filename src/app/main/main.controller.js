@@ -8,7 +8,6 @@
   /** @ngInject */
   function MainController($timeout, toastr) {
     var vm = this;
-
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1495636500727;

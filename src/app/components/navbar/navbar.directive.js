@@ -22,6 +22,9 @@
 
     /** @ngInject */
     function NavbarController() {
+      // var vm = this;
+      // vm.isCollapsed = true;
+      // vm.blabla = 'dsdsds';
       // "vm.creationDate" is available by directive option "bindToController: true"
     }
   }

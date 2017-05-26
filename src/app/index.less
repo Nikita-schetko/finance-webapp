@@ -9,7 +9,15 @@
  *  If you want to override some bootstrap variables, you have to change values here.
  *  The list of variables are listed here bower_components/bootstrap/less/variables.less
  */
-@navbar-inverse-link-color: #5AADBB;
+/* RGB */
+@color1: rgba(32, 191, 85, 1);
+@color2: rgba(35, 146, 228, 1);
+@color3: rgba(11, 79, 108, 1);
+@color4: rgba(251, 251, 255, 1);
+@color5: rgba(117, 117, 117, 1);
+@navbar-inverse-link-color: #d4efff;
+@brand-primary: darken(@color2, 0); // #337ab7
+@brand-success: @color1;
 @icon-font-path: '../../bootstrap/fonts/';
 
 .browsehappy {
@@ -26,7 +34,39 @@
     width: 50px;
   }
 }
+.main hr
+{
+  max-width: 100px;
+}
+.main-login{
+  border-top:1px solid rgba(0, 0, 0, 0.1);
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 400px;
+    padding: 40px 40px;
+
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your less files automatically
