@@ -13,14 +13,14 @@
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+					<form  name="SignUpForm" class="form-horizontal" method="post" action="#" novalidate >
 						
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Your Full Name</label>
 							<div class="cols-sm-10">
-								<div class="input-group">
+								<div class="input-group" title="{{SignUpForm.userName.$invalid && SignUpForm.userName.$dirty == true ? 'Full name is too short' : '' }}">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Full Name"/>
+									<input type="text" class="form-control" name="userName" id="userName"  placeholder="Enter your Full Name" required ng-model="newUser.fullName" ng-minlength="3" ng-class="SignUpForm.userName.$invalid && SignUpForm.userName.$dirty == true ? 'field-error' : '' "   />
 								</div>
 							</div>
 						</div>
@@ -28,9 +28,9 @@
 						<div class="form-group">
 							<label for="email" class="cols-sm-2 control-label">Your Email</label>
 							<div class="cols-sm-10">
-								<div class="input-group">
+								<div class="input-group" title="{{SignUpForm.userEmail.$invalid && SignUpForm.userEmail.$dirty == true ? 'Wrong email!' : '' }}">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									<input type="email" class="form-control" name="userEmail" id="userEmail"  placeholder="Enter your Email" required ng-model="newUser.email" ng-class="SignUpForm.userEmail.$invalid && SignUpForm.userEmail.$dirty == true ? 'field-error' : '' " />
 								</div>
 							</div>
 						</div>
@@ -40,7 +40,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username" required/>
 								</div>
 							</div>
 						</div>
@@ -50,7 +50,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required/>
 								</div>
 							</div>
 						</div>
@@ -60,7 +60,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password" required/>
 								</div>
 							</div>
 						</div>
