@@ -75,13 +75,37 @@
         box-shadow: 0 0 5px 1px rgba(255,0,0,.4);
 }
 
-input.passwordMatch
+input.passwordMatch.ng-dirty
 {
     border: 1px solid #78d978;
     -webkit-box-shadow: 0 0 5px 1px rgba(0,255,13,.4);
     -moz-box-shadow: 0 0 5px 1px rgba(0,255,13,.4);
     box-shadow: 0 0 5px 1px rgba(0,255,13,.4);
 }
+
+.main-login {
+  transition: all linear 0.5s;
+}
+.main-login.ng-hide {
+  opacity: 0;
+}
+
+.newuser-instructions
+{
+  transition: all linear 0.5s;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.newuser-instructions.ng-hide {
+  opacity: 0;
+}
+
+.newuser-instructions.ng-hide-add,
+.newuser-instructions.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your less files automatically
