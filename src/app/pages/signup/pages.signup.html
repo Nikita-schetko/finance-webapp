@@ -18,9 +18,9 @@
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Your Full Name</label>
 							<div class="cols-sm-10">
-								<div class="input-group" title="{{SignUpForm.userName.$invalid && SignUpForm.userName.$dirty == true ? 'Full name is too short' : '' }}">
+								<div class="input-group" title="{{SignUpForm.userFullName.$invalid && SignUpForm.userFullName.$dirty == true ? 'Full name is too short' : '' }}">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="userName" id="userName"  placeholder="Enter your Full Name" required ng-model="newUser.fullName" ng-minlength="3" ng-class="SignUpForm.userName.$invalid && SignUpForm.userName.$dirty == true ? 'field-error' : '' "   />
+									<input type="text" class="form-control" name="userFullName" id="userFullName"  placeholder="Enter your Full Name" required ng-model="newUser.fullName" ng-minlength="3" ng-class="SignUpForm.userFullName.$invalid && SignUpForm.userFullName.$dirty == true ? 'field-error' : '' "   />
 								</div>
 							</div>
 						</div>
@@ -38,9 +38,9 @@
 						<div class="form-group">
 							<label for="username" class="cols-sm-2 control-label">Username</label>
 							<div class="cols-sm-10">
-								<div class="input-group">
+								<div class="input-group" title="{{SignUpForm.userName.$invalid && SignUpForm.userName.$dirty == true ? 'Your Username should consist at least 5 symbols' : '' }}">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username" required/>
+									<input type="text" class="form-control" name="userName" id="userName"  placeholder="Enter your Username" required ng-model="newUser.userName" ng-minlength="5" ng-class="SignUpForm.userName.$invalid && SignUpForm.userName.$dirty == true ? 'field-error' : '' "/>
 								</div>
 							</div>
 						</div>
@@ -50,7 +50,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required/>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required ng-keyup="signup.CheckPassword(newUser.password, newUser.confirmPassword)" ng-class="signup.passwordClass" ng-model="newUser.password"/>
 								</div>
 							</div>
 						</div>
@@ -60,13 +60,12 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password" required/>
+									<input type="password" class="form-control" name="confirmPassword" id="confirmPassword"  placeholder="Confirm your Password" required ng-keyup="signup.CheckPassword(newUser.password, newUser.confirmPassword)" ng-class="signup.passwordClass" ng-model="newUser.confirmPassword" />
 								</div>
 							</div>
 						</div>
-
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button" ng-click="signup.showToastr()">Register</button>
+							<button type="button" class="btn btn-primary btn-lg btn-block login-button" ng-disabled="SignUpForm.$invalid || !signup.passwordEquals" ng-click="signup.showToastr()">Register</button>
 						</div>
 						<div class="login-register">
 				             <a ng-href="#/login">Login</a>
