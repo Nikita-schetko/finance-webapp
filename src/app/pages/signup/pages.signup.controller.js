@@ -4,11 +4,11 @@
   angular
     .module('financeWebapp')
     .controller('SignupController', SignupController);
-
   /** @ngInject */
-  function SignupController(toastr, $timeout) {
+  function SignupController(toastr, $timeout, $http, $log) {
     var vm = this;
     vm.message = 'Join Us';
+    vm.newUser = {};
     vm.newUserRequestSent = false;
     vm.showNewUserForm = true;
     vm.showNewUserInstructions = false;
@@ -27,11 +27,34 @@
     }
 
     vm.showToastr = function () {
-      toastr.info('There should be a AJAX call to backend API or at least POST request...');
       vm.message = 'Thank you!';
       vm.newUserRequestSent = true;
-      $timeout(function(){ vm.showNewUserForm = false }, 700); 
-      $timeout(function(){ vm.showNewUserInstructions = true }, 1500); 
+        $http({
+        method: 'POST',
+        url: 'https://www.itoushi.jp/api_signup.php',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        transformRequest: function(obj) {
+            var str = [];
+            for(var p in obj)
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+            return str.join("&");
+        },
+        data: {
+          "userfullName" : vm.newUser.fullName,
+          "userName": vm.newUser.userName,
+          "userEmail": vm.newUser.email,
+          "userPassword": vm.newUser.password
+        }
+      }).then(function successCallback(response) {
+          toastr.info('Your request was succefully sent!');
+          $timeout(function(){ vm.showNewUserForm = false }, 700); 
+          $timeout(function(){ vm.showNewUserInstructions = true }, 1500);
+          $log.info(response)
+        }, function errorCallback(response) {
+          $log.info(response)          
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+        }); 
     }
   }
 })();

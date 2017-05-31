@@ -23,7 +23,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group" title="{{SignUpForm.userFullName.$invalid && SignUpForm.userFullName.$dirty == true ? 'Full name is too short' : '' }}">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="userFullName" id="userFullName"  placeholder="Enter your Full Name" required ng-model="newUser.fullName" ng-minlength="3" ng-disabled="signup.newUserRequestSent" ng-class="SignUpForm.userFullName.$invalid && SignUpForm.userFullName.$dirty == true ? 'field-error' : '' "   />
+									<input type="text" class="form-control" name="userFullName" id="userFullName"  placeholder="Enter your Full Name" required ng-model="signup.newUser.fullName" ng-minlength="3" ng-disabled="signup.newUserRequestSent" ng-class="SignUpForm.userFullName.$invalid && SignUpForm.userFullName.$dirty == true ? 'field-error' : '' "   />
 								</div>
 							</div>
 						</div>
@@ -33,7 +33,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group" title="{{SignUpForm.userEmail.$invalid && SignUpForm.userEmail.$dirty == true ? 'Wrong email!' : '' }}">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="email" class="form-control" name="userEmail" id="userEmail"  placeholder="Enter your Email" required ng-disabled="signup.newUserRequestSent" ng-model="newUser.email" ng-class="SignUpForm.userEmail.$invalid && SignUpForm.userEmail.$dirty == true ? 'field-error' : '' " />
+									<input type="email" class="form-control" name="userEmail" id="userEmail"  placeholder="Enter your Email" required ng-disabled="signup.newUserRequestSent" ng-model="signup.newUser.email" ng-class="SignUpForm.userEmail.$invalid && SignUpForm.userEmail.$dirty == true ? 'field-error' : '' " />
 								</div>
 							</div>
 						</div>
@@ -43,7 +43,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group" title="{{SignUpForm.userName.$invalid && SignUpForm.userName.$dirty == true ? 'Your Username should consist at least 5 symbols' : '' }}">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="userName" id="userName"  placeholder="Enter your Username" required ng-disabled="signup.newUserRequestSent" ng-model="newUser.userName" ng-minlength="5" ng-class="SignUpForm.userName.$invalid && SignUpForm.userName.$dirty == true ? 'field-error' : '' "/>
+									<input type="text" class="form-control" name="userName" id="userName"  placeholder="Enter your Username" required ng-disabled="signup.newUserRequestSent" ng-model="signup.newUser.userName" ng-minlength="5" ng-class="SignUpForm.userName.$invalid && SignUpForm.userName.$dirty == true ? 'field-error' : '' "/>
 								</div>
 							</div>
 						</div>
@@ -53,7 +53,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required ng-disabled="signup.newUserRequestSent" ng-keyup="signup.CheckPassword(newUser.password, newUser.confirmPassword)" ng-class="signup.passwordClass" ng-model="newUser.password"/>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required ng-disabled="signup.newUserRequestSent" ng-keyup="signup.CheckPassword(signup.newUser.password, signup.newUser.confirmPassword)" ng-class="signup.passwordClass" ng-model="signup.newUser.password"/>
 								</div>
 							</div>
 						</div>
@@ -63,7 +63,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirmPassword" id="confirmPassword"  placeholder="Confirm your Password" required ng-disabled="signup.newUserRequestSent" ng-keyup="signup.CheckPassword(newUser.password, newUser.confirmPassword)" ng-class="signup.passwordClass" ng-model="newUser.confirmPassword" />
+									<input type="password" class="form-control" name="confirmPassword" id="confirmPassword"  placeholder="Confirm your Password" required ng-disabled="signup.newUserRequestSent" ng-keyup="signup.CheckPassword(signup.newUser.password, signup.newUser.confirmPassword)" ng-class="signup.passwordClass" ng-model="signup.newUser.confirmPassword" />
 								</div>
 							</div>
 						</div>
