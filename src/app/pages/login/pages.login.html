@@ -14,13 +14,13 @@
     </div>
     <div class="main-login main-center ">
       <div class="">
-        <form method="post" ng-submit="login()" name="loginForm" class="ng-pristine ng-invalid ng-invalid-required">
+        <form method="post" ng-submit="login.login()" name="loginForm" class="ng-pristine ng-invalid ng-invalid-required">
           <div class="form-group">
 							<label for="username" class="cols-sm-2 control-label">Username</label>
 							<div class="cols-sm-10">
 								<div class="input-group" title="">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-touched" name="userName" id="userName" placeholder="Enter your Username" required="" ng-model="user.email">
+									<input type="text" class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-touched" name="userName" id="userName" placeholder="Enter your Username" required="" ng-model="login.user.email">
 								</div>
 							</div>
 						</div>
@@ -29,7 +29,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" name="password" id="password" placeholder="Enter your Password" required="" ng-model="user.password">
+									<input type="password" class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" name="password" id="password" placeholder="Enter your Password" required="" ng-model="login.user.password">
 								</div>
 							</div>
 						</div>
