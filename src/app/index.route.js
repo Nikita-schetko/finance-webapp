@@ -24,6 +24,12 @@
           controller: 'LoginController',
           controllerAs: 'login'
         })
+        .when('/newsfeed', {
+          url: '/newsfeed',
+          templateUrl: 'app/pages/newsfeed/pages.newsfeed.html',
+          controller: 'NewsfeedController',
+          controllerAs: 'newsfeed'
+        })
       .otherwise({
         redirectTo: '/'
       });
