@@ -1,4 +1,4 @@
-.comment-form {
+.postcomment-form {
   height: 100px;
   position: relative;
   img {
@@ -6,13 +6,42 @@
     margin-right: 10px;
   }
   textarea {
-    float:left;
-    width: calc(~"100% - 110px");
+    float: left;
+    width: calc(~"100% - 75px");
+    font-size: 12px;
   }
-  .btn
+  .btn {
+    margin-top: 5px;
+    float: right;
+    &:last-child {
+      margin-right: 5px;
+    }
+  }
+}
+
+.panel.left-menu {
+  margin-top: 35px;
+}
+
+.newsfeed-form {
+  .post-wrapper
   {
+    margin: 20px 0;
+    position: relative;
+  }
+  .img-avatar {
     position: absolute;
-    right: 10px;
-    top: 58px;
+  }
+  .post-text {
+    width: calc(~"100% - 75px");
+    margin-left: 75px;
+    margin-bottom: 0;
+  }
+  .actions {
+    float: right;
+    .action-btn {
+      margin-top: 5px;
+      border: 0 none;
+    }
   }
 }
