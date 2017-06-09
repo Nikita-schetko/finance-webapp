@@ -30,12 +30,12 @@
       id:2,
       userAvatar:"assets/images/user2.png",
       message:"U.K. Prime Minister Theresa May's future as Britain's top politician was in doubt Friday after polls suggest her decision to call a snap election has narrowed the already-slim majority for her ruling Conservative party",
-      image:"assets/images/tweetImages/stream_85440989-.png"
+      image:"assets/images/TweetImages/stream_85440989-.png"
     },{
       id:3,
       userAvatar:"assets/images/user3.png",
       message:"German Dep ForMin: Can’t Waste Any Time Negotiating Brexit - RTRS",
-      image:"assets/images/tweetImages/stream_85461306-.jpg"
+      image:"assets/images/TweetImages/stream_85461306-.jpg"
     }];
   }
 })();
