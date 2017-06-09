@@ -3,8 +3,9 @@
 </div>
 <div class="container">
   <div class="row main">
-
-    <div class="col-xs-12">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-xs-12 col-sm-6">
       <div class="panel-heading">
         <div class="panel-title text-center">
           <h3 class="title ng-binding">Newsfeed</h3>
@@ -22,9 +23,12 @@
       </div>
       <hr>
       <div class="newsfeed-form clearfix">
-        <div class="post-wrapper clearfix" ng-repeat="post in newsfeed.posts">
+        <div class="post-wrapper clearfix" ng-repeat="post in newsfeed.posts | orderBy:'+':true">
           <img ng-src="{{post.userAvatar}}" alt="..." class="img-avatar img-rounded">
           <p class="post-text">{{ post.message}}</p>
+          <div class="post-imageWrapper">
+            <img ng-src="{{post.image}}" class="img-responsive">
+          </div>
           <div class="actions">
             <button type="button" class="action-btn btn btn-default btn-sm" aria-label="Left Align">
               <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
@@ -40,8 +44,10 @@
             </button>
           </div>
         </div>
-     </div>
+      </div>
     </div>
+        <div class="col-sm-3">
+      </div>
   </div>
 
 
