@@ -15,17 +15,29 @@
       <div class="postcomment-form clearfix">
         <img src="assets/images/person64.png" alt="..." class="img-rounded">
         <textarea class="form-control" rows="3" ng-model="newsfeed.postMessage"></textarea>
-
         <button type="button" class="btn btn-primary btn-sm " ng-click="newsfeed.share()">Share your idea</button>
         <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align">
           <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
         </button>
+        <nz-toggle
+        width="70"
+        height="26"
+        tip-false="'Bearish'" tip-null="'Null'" tip-true="'Bullish'"
+        val-false="'Bearish'"   val-null="" val-true="'Bullish'"
+        tri-toggle
+        on-toggle="myFunction()"
+        ng-model="newsfeed.indicator">
+      </nz-toggle>   
       </div>
       <hr>
       <div class="newsfeed-form clearfix">
         <div class="post-wrapper clearfix" ng-repeat="post in newsfeed.posts | orderBy:'+':true">
           <img ng-src="{{post.userAvatar}}" alt="..." class="img-avatar img-rounded">
-          <p class="post-text">{{ post.message}}</p>
+          <p class="post-text"><span>
+            {{ post.message}}</span>
+             <span class="sentiment bullish" ng-if="post.indicator == 'Bullish'">Bullish</span>
+             <span class="sentiment bearish" ng-if="post.indicator == 'Bearish'">Bearish</span>
+          </p>
           <div class="post-imageWrapper">
             <img ng-src="{{post.image}}" class="img-responsive">
           </div>
