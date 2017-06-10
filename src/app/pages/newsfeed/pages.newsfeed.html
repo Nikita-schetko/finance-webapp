@@ -16,18 +16,20 @@
         <img src="assets/images/person64.png" alt="..." class="img-rounded">
         <textarea class="form-control" rows="3" ng-model="newsfeed.postMessage"></textarea>
         <button type="button" class="btn btn-primary btn-sm " ng-click="newsfeed.share()">Share your idea</button>
-        <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align">
+        <label class="btn btn-primary btn-sm btn-file">
           <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
-        </button>
+          <input type='file' ng-model='newsfeed.base64pic' base-sixty-four-input do-not-parse-if-oversize style="display:none">
+      </label>
         <nz-toggle
         width="70"
         height="26"
-        tip-false="'Bearish'" tip-null="'Null'" tip-true="'Bullish'"
+        tip-false="'Bearish'" tip-null="'Not set'" tip-true="'Bullish'"
         val-false="'Bearish'"   val-null="" val-true="'Bullish'"
         tri-toggle
         on-toggle="myFunction()"
         ng-model="newsfeed.indicator">
-      </nz-toggle>   
+      </nz-toggle>
+         
       </div>
       <hr>
       <div class="newsfeed-form clearfix">
@@ -40,6 +42,7 @@
           </p>
           <div class="post-imageWrapper">
             <img ng-src="{{post.image}}" class="img-responsive">
+            <img ng-if="post.imageBase64" data-ng-src="{{'data:'+post.imageType+';base64,'+post.imageBase64}}" class="img-responsive">            
           </div>
           <div class="actions">
             <button type="button" class="action-btn btn btn-default btn-sm" aria-label="Left Align">

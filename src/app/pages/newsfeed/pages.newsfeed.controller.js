@@ -17,11 +17,14 @@
             id: vm.postsId,
             userAvatar: "assets/images/person64.png",
             message: vm.postMessage,
-            indicator: vm.indicator
+            indicator: vm.indicator,
+            imageType: vm.base64pic.filetype,
+            imageBase64: vm.base64pic.base64
         });
         vm.postsId++;   
         vm.postMessage = '';
-        vm.indicator = ''; 
+        vm.indicator = '';
+        vm.base64pic = {}; 
       }
     }
     vm.posts = [{
